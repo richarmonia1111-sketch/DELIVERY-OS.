@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-bici-primary-50: #f0fdf4;
+    --color-bici-primary-100: #dcfce7;
+    --color-bici-primary-200: #bbf7d0;
+    --color-bici-primary-300: #86efac;
+    --color-bici-primary-400: #4ade80;
+    --color-bici-primary-500: #22c55e;
+    --color-bici-primary-600: #16a34a;
+    --color-bici-primary-700: #15803d;
+    --color-bici-primary-800: #166534;
+    --color-bici-primary-900: #14532d;
+    --color-bici-secondary-50: #f0fdf4;
+    --color-bici-secondary-100: #dcfce7;
+    --color-bici-secondary-200: #bbf7d0;
+    --color-bici-secondary-300: #86efac;
+    --color-bici-secondary-400: #4ade80;
+    --color-bici-secondary-500: #22c55e;
+    --color-bici-secondary-600: #15803d;
+    --color-bici-secondary-700: #15803d;
+    --color-bici-secondary-800: #166534;
+    --color-bici-secondary-900: #14532d;
+    --color-bici-accent-50: #f0fdf4;
+    --color-bici-accent-100: #dcfce7;
+    --color-bici-accent-200: #bbf7d0;
+    --color-bici-accent-300: #86efac;
+    --color-bici-accent-400: #4ade80;
+    --color-bici-accent-500: #4ade80;
+    --color-bici-accent-600: #16a34a;
+    --color-bici-accent-700: #15803d;
+    --color-bici-accent-800: #166534;
+    --color-bici-accent-900: #14532d;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #f8faf9;
+    color: #0f172a;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-bici-primary-600 px-5 py-3 text-sm font-semibold text-white shadow-sm transition-all hover:bg-bici-primary-700 hover:shadow-md active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-bici-primary-700 ring-1 ring-inset ring-bici-primary-200 transition-all hover:bg-bici-primary-50 hover:ring-bici-primary-300 active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5 text-sm font-medium text-slate-600 transition-colors hover:bg-slate-100 hover:text-slate-900;
+  }
+  .card {
+    @apply rounded-2xl bg-white shadow-sm ring-1 ring-slate-200/70;
+  }
+  .input-field {
+    @apply w-full rounded-xl border-0 bg-white px-4 py-3 text-sm text-slate-900 shadow-sm ring-1 ring-inset ring-slate-200 transition-all placeholder:text-slate-400 focus:ring-2 focus:ring-inset focus:ring-bici-primary-500;
+  }
+  .label-field {
+    @apply block text-sm font-medium text-slate-700 mb-1.5;
+  }
+  .badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 3px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out;
+  }
+  .animate-slide-up {
+    animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
